@@ -3,9 +3,9 @@ and thanks to @SpaceDuster For his great idea
 I added the possibility of having axes log/lin, lin/log or log/log
 
 
-![alt tag](https://github.com/thierryH91200/Charts-log/blob/master/ChartsDemo-OSX/Capture%20d’écran%202017-02-19%20à%2017.14.33.png)
+![alt tag](https://github.com/thierryH91200/Charts-log/blob/master/Charts-log/screenshots/Capture%20d’écran%202017-02-19%20à%2017.14.33.png)
 
-![alt tag](https://github.com/thierryH91200/Charts-log/blob/master/ChartsDemo-OSX/Capture%20d’écran%202017-02-19%20à%2017.15.11.png)
+![alt tag](https://github.com/thierryH91200/Charts-log/blob/master/Charts-log/screenshots/Capture%20d’écran%202017-02-19%20à%2017.15.11.png)
 
 
 To implement it:
