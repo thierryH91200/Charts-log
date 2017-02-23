@@ -819,8 +819,8 @@
                                         </connections>
                                     </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="S1s-mh-jsX">
-                                        <rect key="frame" x="-1" y="23" width="70" height="18"/>
-                                        <buttonCell key="cell" type="radio" title="1 to 100" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="jhr-9L-7bl">
+                                        <rect key="frame" x="-1" y="23" width="69" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="random" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="jhr-9L-7bl">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>

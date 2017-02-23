@@ -49,7 +49,7 @@ open class LineDemoViewController: NSViewController
         
         stickMajorButtonOX.isEnabled = logAxeOX
         stickMajorButtonOY.isEnabled = logAxeOY
-
+        
         drawGraph()
     }
     
@@ -68,8 +68,8 @@ open class LineDemoViewController: NSViewController
         xAxis.labelFont = NSFont.systemFont( ofSize: 10.0)
         xAxis.drawGridLinesEnabled = true
         xAxis.valueFormatter = LargeValueFormatter(appendix: "")
-        xAxis.spaceMin = 0.5
-        xAxis.spaceMax = 0.5
+        //       xAxis.spaceMin = 0.5
+        //       xAxis.spaceMax = 0.5
         
         lineChartView.leftAxis.valueFormatter = LargeValueFormatter(appendix: "")
         lineChartView.leftAxis.labelFont = NSFont.systemFont( ofSize: 8.0)
@@ -87,44 +87,49 @@ open class LineDemoViewController: NSViewController
         var ys1 = [Double]()
         var ys2 = [Double]()
         var ys3 = [Double]()
+        var x1 = [Double]()
         
         switch selectCourbe
         {
         case 0:
             ys1 = Array(stride(from: 1, to: 1e9, by:  1e5)).map { x in return Double(    x     )}
             ys2 = Array(stride(from: 1e9, to: 1, by: -1e5)).map { x in return Double(x )}
-            ys3 = Array(stride(from: 1, to: 1e9, by:  1e5)).map { x in return log10(Double(x))}
+            ys3 = Array(stride(from: 1.001, to: 1e9, by:  1e5)).map { x in return log10(Double(x))}
+            x1 = Array(stride(from: 1, to: 1e9, by: 1e5)).map { x in return x}
             
         case 1:
-            ys1 = Array(stride(from: 1, to: 100, by: 1)).map { x in return Double(    x     )}
-            ys2 = Array(stride(from: 1, to: 100, by: 1)).map { x in return Double(2 * x     )}
-            ys3 = Array(stride(from: 1, to: 100, by: 1)).map { x in return log10(Double(x))}
+            ys1 = Array(stride(from: 20, to: 20000, by: 100)).map { x in return Double(arc4random_uniform(UInt32(100))) + 50}
+            ys2 = Array(stride(from: 20, to: 20000, by: 100)).map { x in return Double(arc4random_uniform(UInt32(100))) + 300}
+            ys3 = Array(stride(from: 20, to: 20000, by: 100)).map { x in return Double(arc4random_uniform(UInt32(100))) + 700}
+            x1 = Array(stride(from: 20, to: 20000, by: 100)).map { x in return x}
             
         case 2:
             ys1 = Array(stride(from: 0.0001, to: 10, by: 0.0005)).map { x in return Double(    x     )}
             ys2 = Array(stride(from: 0.0001, to: 10, by: 0.0005)).map { x in return Double(0.5 * x )}
             ys3 = Array(stride(from: 0.0001, to: 10, by: 0.0005)).map { x in return log10(Double(x))}
+            x1 = Array(stride(from: 0.0001, to: 10, by: 0.0005)).map { x in return x}
             
         default:
             ys1 = Array(stride(from: 1, to: 1000, by: 1)).map { x in return Double(    x     )}
             ys2 = Array(stride(from: 1, to: 1000, by: 1)).map { x in return Double(2 * x     )}
             ys3 = Array(stride(from: 1, to: 1000, by: 1)).map { x in return Double(3 * x + 20)}
+            x1 = Array(stride(from: 1, to: 1e9, by: 10)).map { x in return x}
             break
         }
         
-        let dataInput : [([Double], [Double])] =  [(ys1 , ys1),(ys1 , ys2), (ys1 , ys3)]
+        let dataInput : [([Double], [Double])] =  [(x1 , ys1),(x1 , ys2), (x1 , ys3)]
         
         lineChartView.xAxis.stickEnabled = stickOX
         lineChartView.leftAxis.stickEnabled = stickOY
         
         lineChartView.xAxis.stickMajorEnabled = stickMajorOX
         lineChartView.leftAxis.stickMajorEnabled = stickMajorOY
-
-        lineChartView.xAxis.stepsLabels = [true, true, false, true, false, true, false, true, false]
-        lineChartView.xAxis.stepsAxis =   [1.0 , 2.0  , 3.0  , 4.0  , 5.0  , 6.0  , 7.0  , 8.0  , 9.0]
         
-        lineChartView.leftAxis.stepsLabels = [true, false, false, false, false, false, false, false, false]
-        lineChartView.leftAxis.stepsAxis =   [1.0 , 2.0  , 3.0  , 4.0  , 5.0  , 6.0  , 7.0  , 8.0  , 9.0]
+        lineChartView.xAxis.maskLabels = [true, true, false, true, false, true, false, true, false]
+        lineChartView.xAxis.maskAxis =   [1.0 , 2.0  , 3.0  , 4.0  , 5.0  , 6.0  , 7.0  , 8.0  , 9.0]
+        
+        lineChartView.leftAxis.maskLabels = [true, false, false, false, false, false, false, false, false]
+        lineChartView.leftAxis.maskAxis =   [1.0 , 2.0  , 3.0  , 4.0  , 5.0  , 6.0  , 7.0  , 8.0  , 9.0]
         
         lineChartView.leftAxis.logarithmicEnabled = logAxeOY
         lineChartView.xAxis.logarithmicEnabled = logAxeOX
@@ -139,7 +144,7 @@ open class LineDemoViewController: NSViewController
         lineChartView.rightAxis.enabled = false
         lineChartView.data = data
     }
-
+    
     /// function that prepates the data for plotting and setup labels, markers, colors, ...
     ///
     /// - Parameters:
@@ -152,9 +157,8 @@ open class LineDemoViewController: NSViewController
     /// - Returns: <#return value description#>
     public func prepareDataToPlot(dataInput: [([Double], [Double])], labels: [String] = [], color: Array<Any> = [] )->([LineChartDataSet])
     {
-        print("start preparing data for plotting -----")
+        print("start preparing data for plotting")
         var dataInput = dataInput
-        Logarithmic.makingDataLog( &dataInput, logAxeOX: logAxeOX, logAxeOY: logAxeOY)
         
         // setup of markers, colors, ... and their default values if no input is given
         var labels = labels
@@ -196,11 +200,12 @@ open class LineDemoViewController: NSViewController
         for i in 0..<dataInput.count
         {
             var dataEntriesSet: [ChartDataEntry] = []
+            
             for j in 0..<dataInput[i].0.count
             {
-                dataEntriesSet.append(ChartDataEntry(x: dataInput[i].0[j], y: dataInput[i].1[j]))
-                // or
-                // dataEntriesSet.append(ChartDataEntry(x: log10(dataInput[i].0[j]), y: log10(dataInput[i].1[j])))
+                let x  = logAxeOX == true ? log10(dataInput[i].0[j]) : dataInput[i].0[j]
+                let y  = logAxeOY == true ? log10(dataInput[i].1[j]) : dataInput[i].1[j]
+                dataEntriesSet.append(ChartDataEntry(x: x, y: y))
             }
             dataEntries.append(dataEntriesSet)
         }
@@ -213,7 +218,7 @@ open class LineDemoViewController: NSViewController
             lineChartDataSetI.colors = [color[i] as! NSColor]
             lineChartDataSetI.drawCirclesEnabled = false
             lineChartDataSetI.lineWidth = 2.0
-//            lineChartDataSetI.mode = .stepped
+            //            lineChartDataSetI.mode = .stepped
             lineChartDataSets.append(lineChartDataSetI)
         }
         

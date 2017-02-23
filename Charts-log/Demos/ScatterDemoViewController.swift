@@ -119,7 +119,6 @@ open class ScatterDemoViewController: NSViewController
     {
         print("start preparing data for plotting")
         var dataInput = dataInput
-        Logarithmic.makingDataLog( &dataInput, logAxeOX: logAxeOX, logAxeOY: logAxeOY)
         
         // setup of markers, colors, ... and their default values if no input is given
         var labels = labels
@@ -172,7 +171,9 @@ open class ScatterDemoViewController: NSViewController
             var dataEntriesSet: [ChartDataEntry] = []
             for j in 0..<dataInput[i].0.count
             {
-                dataEntriesSet.append(ChartDataEntry(x: dataInput[i].0[j], y: dataInput[i].1[j]))
+                let x  = logAxeOX == true ? log10(dataInput[i].0[j]) : dataInput[i].0[j]
+                let y  = logAxeOY == true ? log10(dataInput[i].1[j]) : dataInput[i].1[j]
+                dataEntriesSet.append(ChartDataEntry(x: x, y: y))
             }
             dataEntries.append(dataEntriesSet)
         }
