@@ -12,23 +12,17 @@ To implement it:
 
 ## - first step This function initializes the axis OX / OY axes 
 
-lineChartView.xAxis.logarithmicEnabled = true/false
+	lineChartView.xAxis.logarithmicEnabled = true/false
 
-lineChartView.leftAxis.logarithmicEnabled = true/false
+	lineChartView.leftAxis.logarithmicEnabled = true/false
 
 
-DataInput is of the form: 
 
-let dataInput: [([Double], [Double])]
 
 
 
 ## - second step transform datas into log10 in option
 
-
-Logarithmic.makingDataLog (& dataInput, logAxeOX: false/true, logAxeOY: false/true)
-
-or
 
 dataEntriesSet.append(ChartDataEntry(x: log10(x), y: log10(y))
 
@@ -38,25 +32,26 @@ dataEntriesSet.append(ChartDataEntry(x: log10(x), y: log10(y))
 
 possibility of modifying the grid:
 
-LineChartView.xAxis.stepsAxis = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0])
+	LineChartView.xAxis.stepsAxis = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0])
 
-lineChartView.xAxis.stepsLabels = [true, false, false, false, false, false, false, false, false]
+	lineChartView.xAxis.stepsLabels = [true, false, false, false, false, false, false, false, false]
 
-lineChartView.leftAxis.stepsLabels = [true, false, false, false, false, false, false, false, false]
+	lineChartView.leftAxis.stepsLabels = [true, false, false, false, false, false, false, false, false]
 
-lineChartView.leftAxis.stepsAxis =   [1.0 , 2.0  , 3.0  , 4.0  , 5.0  , 6.0  , 7.0  , 8.0  , 9.0]
+	lineChartView.leftAxis.stepsAxis =   [1.0 , 2.0  , 3.0  , 4.0  , 5.0  , 6.0  , 7.0  , 8.0  , 9.0]
+
 
 possibility of modifying the grid with stick
 
-lineChartView.xAxis.stick = false or true
+	lineChartView.xAxis.stick = false or true
 
-lineChartView.leftAxis.stick = false or true
+	lineChartView.leftAxis.stick = false or true
 
 possibility of modifying the grid with stick major
 
-lineChartView.xAxis.stickMajorEnabled = false or true
+	lineChartView.xAxis.stickMajorEnabled = false or true
 
-lineChartView.leftAxis.stickMajorEnabled = false or true
+	lineChartView.leftAxis.stickMajorEnabled = false or true
 
 
 
