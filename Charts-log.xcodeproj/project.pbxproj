@@ -19,7 +19,7 @@
 		0363630D1E5DE4880001636F /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036363021E5DE4880001636F /* DateValueFormatter.swift */; };
 		0363630E1E5DE4880001636F /* DoubleAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036363031E5DE4880001636F /* DoubleAxisValueFormatter.swift */; };
 		0363630F1E5DE4880001636F /* IntAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036363041E5DE4880001636F /* IntAxisValueFormatter.swift */; };
-		036363101E5DE4880001636F /* LargeValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036363051E5DE4880001636F /* LargeValueFormatter.swift */; };
+		036363101E5DE4880001636F /* LogValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036363051E5DE4880001636F /* LogValueFormatter.swift */; };
 		036363111E5DE4880001636F /* LineDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036363061E5DE4880001636F /* LineDateViewController.swift */; };
 		036363121E5DE4880001636F /* LineDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036363071E5DE4880001636F /* LineDemoViewController.swift */; };
 		036363141E5DE4880001636F /* RadarDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036363091E5DE4880001636F /* RadarDemoViewController.swift */; };
@@ -107,7 +107,7 @@
 		036363021E5DE4880001636F /* DateValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateValueFormatter.swift; path = Demos/DateValueFormatter.swift; sourceTree = "<group>"; };
 		036363031E5DE4880001636F /* DoubleAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleAxisValueFormatter.swift; path = Demos/DoubleAxisValueFormatter.swift; sourceTree = "<group>"; };
 		036363041E5DE4880001636F /* IntAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntAxisValueFormatter.swift; path = Demos/IntAxisValueFormatter.swift; sourceTree = "<group>"; };
-		036363051E5DE4880001636F /* LargeValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LargeValueFormatter.swift; path = Demos/LargeValueFormatter.swift; sourceTree = "<group>"; };
+		036363051E5DE4880001636F /* LogValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogValueFormatter.swift; path = Demos/LogValueFormatter.swift; sourceTree = "<group>"; };
 		036363061E5DE4880001636F /* LineDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineDateViewController.swift; path = Demos/LineDateViewController.swift; sourceTree = "<group>"; };
 		036363071E5DE4880001636F /* LineDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineDemoViewController.swift; path = Demos/LineDemoViewController.swift; sourceTree = "<group>"; };
 		036363091E5DE4880001636F /* RadarDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadarDemoViewController.swift; path = Demos/RadarDemoViewController.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 				036363021E5DE4880001636F /* DateValueFormatter.swift */,
 				036363031E5DE4880001636F /* DoubleAxisValueFormatter.swift */,
 				036363041E5DE4880001636F /* IntAxisValueFormatter.swift */,
-				036363051E5DE4880001636F /* LargeValueFormatter.swift */,
+				036363051E5DE4880001636F /* LogValueFormatter.swift */,
 			);
 			name = Formatters;
 			sourceTree = "<group>";
@@ -420,7 +420,7 @@
 				036362C61E5DE2060001636F /* AppDelegate.swift in Sources */,
 				036363121E5DE4880001636F /* LineDemoViewController.swift in Sources */,
 				036363141E5DE4880001636F /* RadarDemoViewController.swift in Sources */,
-				036363101E5DE4880001636F /* LargeValueFormatter.swift in Sources */,
+				036363101E5DE4880001636F /* LogValueFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

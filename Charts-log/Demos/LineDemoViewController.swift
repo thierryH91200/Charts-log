@@ -67,11 +67,11 @@ open class LineDemoViewController: NSViewController
         
         xAxis.labelFont = NSFont.systemFont( ofSize: 10.0)
         xAxis.drawGridLinesEnabled = true
-        xAxis.valueFormatter = LargeValueFormatter(appendix: "")
+        xAxis.valueFormatter = LogValueFormatter(appendix: "")
         //       xAxis.spaceMin = 0.5
         //       xAxis.spaceMax = 0.5
         
-        lineChartView.leftAxis.valueFormatter = LargeValueFormatter(appendix: "")
+        lineChartView.leftAxis.valueFormatter = LogValueFormatter(appendix: "")
         lineChartView.leftAxis.labelFont = NSFont.systemFont( ofSize: 8.0)
         
         let  marker = XYMarkerView( color: #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1), font: NSFont.systemFont(ofSize: 12.0),
