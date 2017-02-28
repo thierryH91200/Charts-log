@@ -21,7 +21,7 @@ To implement it:
 
 
 
-## - second step transform datas into log10 in option
+## - second step transform datas into log10
 
 
 dataEntriesSet.append(ChartDataEntry(x: log10(x), y: log10(y))

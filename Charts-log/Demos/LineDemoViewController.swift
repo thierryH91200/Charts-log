@@ -152,8 +152,6 @@ open class LineDemoViewController: NSViewController
     ///   - labels: <#labels description#>
     ///   - marker: <#marker description#>
     ///   - color: <#color description#>
-    ///   - logX: <#logX description#>
-    ///   - logY: <#logY description#>
     /// - Returns: <#return value description#>
     public func prepareDataToPlot(dataInput: [([Double], [Double])], labels: [String] = [], color: Array<Any> = [] )->([LineChartDataSet])
     {
