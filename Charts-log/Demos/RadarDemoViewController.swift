@@ -41,7 +41,7 @@ open class RadarDemoViewController: NSViewController
         yAxis.labelFont = NSUIFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!
         yAxis.labelCount = 5
         yAxis.axisMinimum = 0.0
-//        yAxis.axisMaximum = 80.0
+        yAxis.axisMaximum = 80.0
         yAxis.drawLabelsEnabled = false
         
         let l = radarChartView.legend

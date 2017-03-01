@@ -65,7 +65,8 @@ open class LineDateViewController: NSViewController
 
             dataEntries.append(dataEntry)
         }
-        xAxis.labelCount = visitor.count
+        xAxis.labelCount = visitor.count * 2
+        xAxis.labelRotationAngle = -90.0
         xAxis.valueFormatter = DateValueFormatter(miniTime : miniDate)
      
         let data = LineChartData()
